@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- bsIcon -->
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <!-- myCss -->
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+
+
+  <div class="container text-center">
+    <!-- 背景 -->
+    <div class="row background"></div>
+    
+    <!-- 搜索框 --> 
+    <div class="row input-group mb-3 ipt-search">
+      <input type="text" class="form-control" placeholder="请输入城市">
+      <button type="button" class="btn btn-success btn-search">搜索天气</button>
+      <!-- <span class="input-group-text" id="basic-addon2">@example.com</span> -->
+    </div>
+
+    <!-- 结果图 -->
+    <div class="row result">
+      <div class="col resWeather">
+        <!-- 天气状态图标 -->
+        <div class="row"><span><i class="bi-cloud-drizzle"></i></span></div>
+        <!-- 日期 -->
+        <div class="row"><span>星期一</span></div>
+        <!-- 气温 -->
+        <div class="row"><span>30°C</span></div>
+        <!-- 气温 -->
+        <div class="row"><span>晴天</span></div>
+      </div>
+    </div>  
+  </div>
+  
+
+  <!-- bootstrap -->
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- myJs -->
+  <script src="./index.js"></script>
+</body>
+</html>
