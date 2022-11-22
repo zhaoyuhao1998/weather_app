@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>天气预报</title>
   <!-- bootstrap -->
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   <!-- bsIcon -->
@@ -22,29 +23,36 @@
     
     <!-- 搜索框 --> 
     <div class="row input-group mb-3 ipt-search">
-      <input type="text" class="form-control" placeholder="请输入城市">
-      <button type="button" class="btn btn-success btn-search">搜索天气</button>
+      <input type="text" v-model="city" class="form-control" @keyup.enter="search" placeholder="请输入城市">
+      <button type="button" class="btn btn-success btn-search" @click="search">搜索天气</button>
       <!-- <span class="input-group-text" id="basic-addon2">@example.com</span> -->
     </div>
 
     <!-- 结果图 -->
-    <div class="row result">
-      <div class="col resWeather">
+    <div class="row result" v-if="isShow">
+      <div :class="{resWeatherDay: isDay, col:true, resWeatherNight: !isDay}">
         <!-- 天气状态图标 -->
-        <div class="row"><span><i class="bi-cloud-drizzle"></i></span></div>
+        <div class="row"><span>
+          <i :class="weatherIcon"></i>
+        </span></div>
         <!-- 日期 -->
-        <div class="row"><span>星期一</span></div>
+        <div class="row"><span>{{ cityCur.LocalObservationDateTime }}</span></div>
         <!-- 气温 -->
-        <div class="row"><span>30°C</span></div>
-        <!-- 气温 -->
-        <div class="row"><span>晴天</span></div>
+        <div class="row"><span>{{ cityCur.Temperature.Metric.Value }} °C</span></div>
+        <!-- 晴天 or others -->
+        <div class="row"><span>{{ cityCur.WeatherText }}</span></div>
       </div>
     </div>  
   </div>
   
 
+  
   <!-- bootstrap -->
   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+  <!-- axios -->
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
   <!-- myJs -->
   <script src="./index.js"></script>
 </body>

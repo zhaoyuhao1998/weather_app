@@ -16,7 +16,7 @@
   width: 10%;
 }
 
-body .container .col {
+body .container .resWeatherDay {
   height: 300px;
   width: 30%;
   background-image: url(./imgs/day.jpg);
@@ -24,6 +24,18 @@ body .container .col {
   background-position: center;
   border-radius: 100%;
   box-shadow: 0 0 20px;
+  /* background-size: cover; */
+}
+
+body .container .resWeatherNight {
+  height: 300px;
+  width: 30%;
+  background-image: url(./imgs/night.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+  box-shadow: 0 0 20px;
+  color: white;
   /* background-size: cover; */
 }
 
